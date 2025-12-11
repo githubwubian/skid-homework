@@ -5,6 +5,8 @@ import { ExplanationStep } from "@/store/problems-store";
 import { useMemo, useState } from "react";
 import { Button } from "./ui/button";
 import { Label } from "./ui/label";
+import { Kbd } from "./ui/kbd";
+import { useHotkeys } from "react-hotkeys-hook";
 
 export type ExplanationProps = {
   mode: ExplanationMode;
@@ -19,13 +21,6 @@ export default function Explanation({
 }: ExplanationProps) {
   const { t } = useTranslation("commons", { keyPrefix: "solution-viewer" });
 
-  const [visibleStepCounter, setVisibleStepCounter] = useState(1);
-  const [hasMoreHints, setHasMoreHints] = useState(steps?.length !== 0);
-
-  const visibleSteps = useMemo(() => {
-    return steps?.slice(0, visibleStepCounter);
-  }, [visibleStepCounter, steps]);
-
   if (mode === "explanation") {
     return (
       <div>
@@ -39,6 +34,22 @@ export default function Explanation({
     );
   }
 
+  // steps mode
+  return <StepExplanation steps={steps} />;
+}
+
+function StepExplanation({
+  steps,
+}: {
+  steps: ExplanationStep[] | null | undefined;
+}) {
+  const [visibleStepCounter, setVisibleStepCounter] = useState(1);
+  const [hasMoreHints, setHasMoreHints] = useState(steps?.length !== 0);
+
+  const visibleSteps = useMemo(() => {
+    return steps?.slice(0, visibleStepCounter);
+  }, [visibleStepCounter, steps]);
+
   const nextHint = () => {
     if (visibleStepCounter >= (steps?.length ?? 0)) {
       // no more available steps
@@ -48,7 +59,8 @@ export default function Explanation({
     setVisibleStepCounter((c) => c + 1);
   };
 
-  // steps mode
+  useHotkeys("c", nextHint);
+
   return (
     <>
       {visibleSteps?.map((step) => {
@@ -61,7 +73,7 @@ export default function Explanation({
       }) ?? "No steps available."}
 
       <Button onClick={nextHint} disabled={!hasMoreHints}>
-        Hint me ({visibleSteps?.length}/{steps?.length})
+        Hint me ({visibleSteps?.length}/{steps?.length}) <Kbd>C</Kbd>
       </Button>
     </>
   );
