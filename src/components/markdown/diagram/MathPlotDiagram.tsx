@@ -208,7 +208,7 @@ export default function MathPlotDiagram({ code }: { code: string }) {
   }, [code, dimensions]);
 
   return (
-    <div className="group relative w-full h-full flex flex-col rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden">
+    <div className="group relative aspect-square w-full h-full flex flex-col rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden">
       <style jsx global>{`
         .function-plot text {
           fill: #374151 !important;
