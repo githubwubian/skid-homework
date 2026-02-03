@@ -444,6 +444,7 @@ export default function SolutionsArea() {
                               <div className="text-xs text-slate-400">
                                 {t("photo-label", {
                                   index: idx + 1,
+                                  fileName: entry.item.displayName,
                                   source: tCommon(
                                     `sources.${entry.item.source}`,
                                   ),

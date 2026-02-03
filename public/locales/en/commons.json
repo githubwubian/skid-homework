@@ -181,7 +181,7 @@
     "tabs": {
       "fallback": "File {{index}}"
     },
-    "photo-label": "Photo {{index}} • {{source}}",
+    "photo-label": "Photo {{index}} • {{fileName}} • {{source}}",
     "toggle-preview": "Toggle Preview",
     "streaming": {
       "title": "AI Output",
