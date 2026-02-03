@@ -61,7 +61,7 @@ export default function PreviewItem({
             isMobile
               ? "h-64 min-w-[72vw] rounded-2xl border-white/15"
               : "rounded-xl border-white/10",
-            selectedImage === item.id ? "bg-accent" : "",
+            selectedImage === item.url ? "bg-accent" : "",
             getColorClassByStatus(item.status),
           )}
         >
