@@ -8,6 +8,7 @@ export type FileStatus = "success" | "pending" | "failed" | "processing";
 export type FileItem = {
   id: string;
   file: File;
+  displayName: string;
   mimeType: string;
   url: string; // Object URL for client-side preview
   source: "upload" | "camera";
@@ -112,6 +113,7 @@ export const useProblemsStore = create<ProblemsState>((set, get) => ({
         items.push({
           id: record.id,
           file,
+          displayName: file.name,
           mimeType: record.mimeType,
           source: record.source,
           status: record.status,
@@ -147,7 +149,7 @@ export const useProblemsStore = create<ProblemsState>((set, get) => ({
     const records: HomeworkRecord[] = newItems.map((item) => ({
       id: item.id,
       blob: item.file,
-      fileName: item.file.name,
+      fileName: item.displayName,
       mimeType: item.mimeType,
       source: item.source,
       status: item.status,

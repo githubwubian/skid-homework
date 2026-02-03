@@ -69,8 +69,8 @@ export default function PreviewList({
                 </div>
               )}
               <figcaption className="flex items-center justify-between px-4 py-3 text-xs text-slate-200">
-                <span className="truncate pr-2" title={it.file.name}>
-                  {it.file.name}
+                <span className="truncate pr-2" title={it.displayName}>
+                  {it.displayName}
                 </span>
                 <Badge variant="outline" className="border-white/20">
                   {tCommon(`sources.${it.source}`)}
@@ -122,8 +122,8 @@ export default function PreviewList({
                   </div>
                 )}
                 <figcaption className="flex items-center justify-between px-3 py-2 text-xs text-slate-300">
-                  <span className="truncate" title={it.file.name}>
-                    {it.file.name}
+                  <span className="truncate" title={it.displayName}>
+                    {it.displayName}
                   </span>
                   <Badge variant="outline" className="border-white/20">
                     {tCommon(`sources.${it.source}`)}

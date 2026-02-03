@@ -147,6 +147,7 @@ export default function ScanPage() {
       const initialItems: FileItem[] = arr.map((file) => ({
         id: uuidv4(),
         file,
+        displayName: file.name,
         mimeType: file.type,
         url: URL.createObjectURL(file),
         source,
@@ -162,10 +163,10 @@ export default function ScanPage() {
       if (imageEnhancement) {
         initialItems.forEach((item) => {
           if (item.status === "processing") {
-            console.log(`Processing image ${item.file.name}`);
+            console.log(`Processing image ${item.displayName}`);
             processImage(item.file)
               .then((result) => {
-                console.log(`Success processed image ${item.file.name}`);
+                console.log(`Success processed image ${item.displayName}`);
                 updateFileItem(item.id, {
                   status: "pending",
                   file: result.file,
@@ -173,7 +174,7 @@ export default function ScanPage() {
                 });
               })
               .catch((error) => {
-                console.error(`Failed to process ${item.file.name}:`, error);
+                console.error(`Failed to process ${item.displayName}:`, error);
                 updateFileItem(item.id, {
                   status: "failed",
                 });

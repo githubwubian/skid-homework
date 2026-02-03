@@ -106,14 +106,10 @@ export default function SolutionsArea() {
     lines.push("");
 
     exportableSolutions.forEach((entry, pageIndex) => {
-      const displayName = entry.item.file.name
-        ? entry.item.file.name
-        : t("tabs.fallback", { index: pageIndex + 1 });
-
       lines.push(
         `## ${translate("export.page-heading", {
           index: pageIndex + 1,
-          name: displayName,
+          name: entry.item.displayName,
         })}`,
       );
       lines.push("");
@@ -400,7 +396,7 @@ export default function SolutionsArea() {
                   <TabsList className="flex flex-wrap gap-2">
                     {orderedSolutions.map((entry, idx) => (
                       <TabsTrigger key={entry.item.id} value={entry.item.url}>
-                        {entry.item.file.name ||
+                        {entry.item.displayName ||
                           t("tabs.fallback", { index: idx + 1 })}
                       </TabsTrigger>
                     ))}
@@ -470,7 +466,7 @@ export default function SolutionsArea() {
                                     {/* eslint-disable-next-line @next/next/no-img-element */}
                                     <img
                                       src={entry.item.url}
-                                      alt={`Preview ${entry.item.file.name || idx + 1}`}
+                                      alt={`Preview ${entry.item.displayName || idx + 1}`}
                                       className="block max-h-96 w-full object-contain bg-black/20 cursor-pointer"
                                     />
                                   </PhotoView>
