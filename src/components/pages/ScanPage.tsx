@@ -42,6 +42,7 @@ export default function ScanPage() {
     removeImageItem,
     updateFileItem,
     clearAllItems,
+    setSelectedProblem,
     addSolution,
     updateSolution,
     removeSolutionsByIds,
@@ -203,6 +204,8 @@ export default function ScanPage() {
   const clearAll = () => {
     items.forEach((i) => URL.revokeObjectURL(i.url)); // Clean up all object URLs.
     clearAllItems();
+    // reset index
+    setSelectedProblem(0);
     clearAllSolutions(); // Use the semantic action to clear solutions.
   };
 
