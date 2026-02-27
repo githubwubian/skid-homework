@@ -85,11 +85,8 @@ export class GeminiAi extends BaseAiClient {
     existingText: string,
   ): string {
     if (!groundingChunks.length) return existingText;
-    const hasOnlineSearchSection =
-      existingText.includes("### ONLINE_SEARCH");
-    const hasIndexedList = /### ONLINE_SEARCH[\s\S]*#\d+\s-/.test(
-      existingText,
-    );
+    const hasOnlineSearchSection = existingText.includes("### ONLINE_SEARCH");
+    const hasIndexedList = /### ONLINE_SEARCH[\s\S]*#\d+\s-/.test(existingText);
     if (hasOnlineSearchSection && hasIndexedList) {
       return existingText;
     }
@@ -109,9 +106,7 @@ export class GeminiAi extends BaseAiClient {
     });
 
     const queryLine =
-      queries && queries.length
-        ? `Queries: ${queries.join(", ")}`
-        : undefined;
+      queries && queries.length ? `Queries: ${queries.join(", ")}` : undefined;
 
     const block = [
       "### ONLINE_SEARCH",
@@ -128,7 +123,7 @@ export class GeminiAi extends BaseAiClient {
     media: string,
     mimeType: string,
     prompt?: string,
-    model = "gemini-3-pro-preview",
+    model = "gemini-3.1-pro-preview",
     callback?: (text: string) => void,
     options?: { onlineSearch?: boolean },
   ) {
@@ -142,7 +137,11 @@ export class GeminiAi extends BaseAiClient {
       });
     }
 
-    const parts: Array<{ text: string } | { fileData: { mimeType: string; fileUri: string } } | { inlineData: { mimeType: string; data: string } }> = [];
+    const parts: Array<
+      | { text: string }
+      | { fileData: { mimeType: string; fileUri: string } }
+      | { inlineData: { mimeType: string; data: string } }
+    > = [];
     if (prompt) {
       parts.push({ text: prompt });
     }
@@ -250,7 +249,7 @@ export class GeminiAi extends BaseAiClient {
 
   async sendChat(
     messages: AiChatMessage[],
-    model = "gemini-3-pro-preview",
+    model = "gemini-3.1-pro-preview",
     callback?: (text: string) => void,
     options?: { onlineSearch?: boolean },
   ) {
