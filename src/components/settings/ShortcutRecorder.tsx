@@ -75,7 +75,11 @@ export default function ShortcutRecorder({
           if (recording) e.stopPropagation();
         }}
         onClick={() => {
-          setRecording(!recording);
+          if (onRecordingChange) {
+            onRecordingChange(!recording);
+          } else {
+            setInternalRecording((prev) => !prev);
+          }
         }}
       >
         {recording ? recordingLabel : label || unassignedLabel}
