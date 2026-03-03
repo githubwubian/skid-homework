@@ -249,11 +249,11 @@ export default function AIAPICredentialsManager({
                     }}
                   />
                   <Label htmlFor="use-responses-api" className="text-sm">
-                    {t("api-credentials.advanced.enable-response-api")}
+                    {t("api-credentials.advanced.enable-responses-api")}
                   </Label>
                 </div>
                 <p className="text-xs text-muted-foreground mt-1">
-                  {t("api-credentials.advanced.response-api-tip")}
+                  {t("api-credentials.advanced.responses-api-tip")}
                 </p>
 
                 <div className="space-y-2 pt-4">

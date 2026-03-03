@@ -82,7 +82,7 @@ export class OpenAiClient extends BaseAiClient {
     if (!this.useResponsesApi) {
       if (options?.onlineSearch) {
         toast.error(
-          i18n.t("ai-client.openai.requires-response-api-online-search", {
+          i18n.t("ai-client.openai.requires-responses-api-online-search", {
             ns: "commons",
           }),
         );
@@ -92,7 +92,7 @@ export class OpenAiClient extends BaseAiClient {
       }
       if (file.mimeType === "application/pdf") {
         toast.error(
-          i18n.t("ai-client.openai.requires-response-api-pdf", {
+          i18n.t("ai-client.openai.requires-responses-api-pdf", {
             ns: "commons",
           }),
         );
@@ -239,7 +239,7 @@ export class OpenAiClient extends BaseAiClient {
   ) {
     if (!this.useResponsesApi && options?.onlineSearch) {
       toast.error(
-        i18n.t("ai-client.openai.requires-response-api-online-search", {
+        i18n.t("ai-client.openai.requires-responses-api-online-search", {
           ns: "commons",
         }),
       );

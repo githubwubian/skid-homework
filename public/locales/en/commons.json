@@ -292,8 +292,8 @@
         "custom-url": "Custom URL",
         "switched-openrouter": "Switched to OpenRouter",
         "switched-openai": "Reset to OpenAI default",
-        "enable-response-api": "Enable Response API",
-        "response-api-tip": "Hint: Enabling the new API allows OpenAI models to read PDFs and perform web searches. These features are unavailable without this API.",
+        "enable-responses-api": "Enable Responses API",
+        "responses-api-tip": "Hint: Enabling the new API allows OpenAI models to read PDFs and perform web searches. These features are unavailable without this API.",
         "web-search-tool": {
           "label": "Web Search Tool Type",
           "placeholder": "Select tool type...",
@@ -673,8 +673,8 @@
   },
   "ai-client": {
     "openai": {
-      "requires-response-api-online-search": "Using online search requires Responses API to be enabled",
-      "requires-response-api-pdf": "Using PDF recognition requires Responses API to be enabled",
+      "requires-responses-api-online-search": "Using online search requires Responses API to be enabled",
+      "requires-responses-api-pdf": "Using PDF recognition requires Responses API to be enabled",
       "web-search-not-supported": "Model {{model}} does not support web search, continuing without it"
     }
   }
