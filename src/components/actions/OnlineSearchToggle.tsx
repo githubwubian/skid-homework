@@ -7,7 +7,7 @@ export type OnlineSearchToggleProps = {
   label: string;
 };
 
-export function OnlineSearchToggle({
+export default function OnlineSearchToggle({
   checked,
   onCheckedChange,
   label,

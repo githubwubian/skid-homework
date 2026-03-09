@@ -17,7 +17,7 @@ import {
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { toast } from "sonner";
-import { OpenAIAdvancedOptions } from "./OpenAIAdvancedOptions";
+import OpenAIAdvancedOptions from "./OpenAIAdvancedOptions";
 
 export type AddAISourceDialogProps = {
   onChange: (dialogOpen: boolean) => void;

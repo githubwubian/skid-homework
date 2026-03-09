@@ -3,9 +3,8 @@
 import { useState } from "react";
 import { useAiStore } from "@/store/ai-store";
 import { useAvailableModels } from "@/hooks/use-available-models";
-import {
+import ModelSelector, {
   CUSTOM_MODEL_VALUE,
-  ModelSelector
 } from "@/components/ui/model-selector";
 
 export default function ModelSelectorPopover() {

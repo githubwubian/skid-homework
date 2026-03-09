@@ -33,7 +33,7 @@ import {
 } from "../ui/command";
 import { ChatThreadRecord } from "@/db/chat-db";
 
-interface ChatHeaderProps {
+export type ChatHeaderProps = {
   sidebarOpen: boolean;
   setSidebarOpen: (open: boolean) => void;
   sidebarCollapsed: boolean;
@@ -49,7 +49,7 @@ interface ChatHeaderProps {
   onUpdateModel: (id: string, model: string) => void;
 }
 
-export function ChatHeader({
+export default function ChatHeader({
   sidebarOpen,
   setSidebarOpen,
   sidebarCollapsed,

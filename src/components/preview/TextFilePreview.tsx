@@ -14,7 +14,7 @@ export type TextFilePreviewProps = {
   item: FileItem;
 }
 
-export function TextFilePreview({ item }: TextFilePreviewProps) {
+export default function TextFilePreview({ item }: TextFilePreviewProps) {
   const [content, setContent] = useState<string>("");
 
   useEffect(() => {

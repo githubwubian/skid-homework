@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils";
 import { useShortcut } from "@/hooks/use-shortcut";
 import { ShortcutHint } from "../ShortcutHint";
 import { useSettingsStore } from "@/store/settings-store";
-import { OnlineSearchToggle } from "@/components/actions/OnlineSearchToggle.tsx";
+import OnlineSearchToggle from "@/components/actions/OnlineSearchToggle.tsx";
 import ModelSelectorPopover from "./ModelSelectorPopover";
 
 export type ActionsCardProps = {
@@ -75,7 +75,7 @@ export default function ActionsCard({
       className={cn(
         "md:col-span-1 border-white/10 backdrop-blur",
         layout === "mobile" &&
-          "border border-white/20 bg-background/70 shadow-lg backdrop-blur-lg",
+        "border border-white/20 bg-background/70 shadow-lg backdrop-blur-lg",
         className
       )}
     >
@@ -120,11 +120,11 @@ export default function ActionsCard({
               label={
                 onlineSearchEnabled
                   ? tCommon(
-                      "settings-page.thinking.online-search.toggle.enabled"
-                    )
+                    "settings-page.thinking.online-search.toggle.enabled"
+                  )
                   : tCommon(
-                      "settings-page.thinking.online-search.toggle.disabled"
-                    )
+                    "settings-page.thinking.online-search.toggle.disabled"
+                  )
               }
             />
           </div>

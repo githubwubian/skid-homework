@@ -12,10 +12,10 @@ import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
 
 import { useChatLogic } from "@/hooks/use-chat-logic";
-import { ChatSidebar } from "@/components/chat/chat-sidebar";
-import { ChatHeader } from "@/components/chat/chat-header";
-import { ChatMessages } from "@/components/chat/chat-messages";
-import { ChatComposer } from "@/components/chat/chat-composer";
+import ChatSidebar from "@/components/chat/chat-sidebar";
+import ChatHeader from "@/components/chat/chat-header";
+import ChatMessages from "@/components/chat/chat-messages";
+import ChatComposer from "@/components/chat/chat-composer";
 
 export default function ChatPage() {
   const { t } = useTranslation("commons", { keyPrefix: "chat-page" });

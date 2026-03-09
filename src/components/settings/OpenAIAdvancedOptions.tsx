@@ -46,7 +46,7 @@ export type OpenAIAdvancedOptionsProps = {
   setIsCustomWebSearch: (isCustom: boolean) => void;
 };
 
-export function OpenAIAdvancedOptions({
+export default function OpenAIAdvancedOptions({
   apiAddress,
   setApiAddress,
   useResponsesApi,
@@ -137,10 +137,10 @@ export function OpenAIAdvancedOptions({
             <Select
               value={
                 isCustomWebSearch ||
-                (webSearchToolType !== undefined &&
-                  !["web_search", "web_search_preview"].includes(
-                    webSearchToolType
-                  ))
+                  (webSearchToolType !== undefined &&
+                    !["web_search", "web_search_preview"].includes(
+                      webSearchToolType
+                    ))
                   ? "custom"
                   : webSearchToolType === undefined
                     ? "auto"
@@ -188,22 +188,22 @@ export function OpenAIAdvancedOptions({
                 !["web_search", "web_search_preview"].includes(
                   webSearchToolType
                 ))) && (
-              <Input
-                placeholder={t(
-                  "api-credentials.advanced.web-search-tool.custom-placeholder"
-                )}
-                value={webSearchToolType || ""}
-                onChange={(e) => {
-                  const val = e.target.value;
-                  setWebSearchToolType(val || undefined);
-                  if (val) {
-                    setIsCustomWebSearch(false);
-                  } else {
-                    setIsCustomWebSearch(true);
-                  }
-                }}
-              />
-            )}
+                <Input
+                  placeholder={t(
+                    "api-credentials.advanced.web-search-tool.custom-placeholder"
+                  )}
+                  value={webSearchToolType || ""}
+                  onChange={(e) => {
+                    const val = e.target.value;
+                    setWebSearchToolType(val || undefined);
+                    if (val) {
+                      setIsCustomWebSearch(false);
+                    } else {
+                      setIsCustomWebSearch(true);
+                    }
+                  }}
+                />
+              )}
             <p className="text-xs text-muted-foreground">
               {t("api-credentials.advanced.web-search-tool.tip")}
             </p>

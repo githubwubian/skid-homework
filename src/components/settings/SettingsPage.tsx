@@ -33,7 +33,7 @@ import { Textarea } from "../ui/textarea";
 import AIAPICredentialsManager from "./AIAPICredentialsManager";
 import AISourceManager from "./AISourceManager";
 import ExplanationModeSelector from "./ExplanationModeSelector";
-import { CUSTOM_MODEL_VALUE, ModelSelector } from "../ui/model-selector";
+import ModelSelector, { CUSTOM_MODEL_VALUE } from "../ui/model-selector";
 import { RefreshCw } from "lucide-react";
 
 export const DEFAULT_BASE_BY_PROVIDER: Record<AiProvider, string> = {

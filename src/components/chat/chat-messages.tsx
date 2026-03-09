@@ -15,12 +15,12 @@ import { useChatStore } from "@/store/chat-store";
 import { Textarea } from "../ui/textarea";
 import { Button } from "../ui/button";
 
-interface ChatMessagesProps {
+export type ChatMessagesProps = {
   messages: (AiChatMessage & { id?: string; chatId?: string })[];
   resolvedSource: AiSource | null;
 }
 
-export function ChatMessages({ messages, resolvedSource }: ChatMessagesProps) {
+export default function ChatMessages({ messages, resolvedSource }: ChatMessagesProps) {
   const { t } = useTranslation("commons", { keyPrefix: "chat-page" });
   const scrollAreaRef = useRef<HTMLDivElement | null>(null);
   const updateMessage = useChatStore((state) => state.updateMessage);
@@ -141,7 +141,7 @@ export function ChatMessages({ messages, resolvedSource }: ChatMessagesProps) {
                       <Textarea
                         value={editContent}
                         onChange={(e) => setEditContent(e.target.value)}
-                        className="min-h-[100px] bg-background"
+                        className="min-h-25 bg-background"
                       />
                       <div className="flex justify-end gap-2">
                         <Button

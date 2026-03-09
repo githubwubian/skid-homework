@@ -44,7 +44,7 @@ export type ModelSelectorProps = {
   className?: string;
 };
 
-export function ModelSelector({
+export default function ModelSelector({
   sourceModelsMap,
   value,
   onChangeAction,

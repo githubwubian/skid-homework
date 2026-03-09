@@ -26,7 +26,7 @@ import { ChatThreadRecord } from "@/db/chat-db";
 import { useRef } from "react";
 import { useHotkeys } from "react-hotkeys-hook";
 
-interface ChatSidebarProps {
+export type ChatSidebarProps = {
   threads: ChatThreadRecord[];
   activeChatId?: string;
   sourceMap: Map<string, AiSource>;
@@ -40,7 +40,7 @@ interface ChatSidebarProps {
   onCloseMobile?: () => void;
 }
 
-export function ChatSidebar({
+export default function ChatSidebar({
   threads,
   activeChatId,
   sourceMap,

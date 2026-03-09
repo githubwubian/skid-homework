@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
 import { Textarea } from "../ui/textarea";
 
-interface ChatComposerProps {
+export type ChatComposerProps = {
   input: string;
   setInput: (val: string) => void;
   onSend: () => void;
@@ -16,7 +16,7 @@ interface ChatComposerProps {
   disabled: boolean;
 }
 
-export function ChatComposer({
+export default function ChatComposer({
   input,
   setInput,
   onSend,
