@@ -695,5 +695,10 @@
       "requires-responses-api-pdf": "Using PDF recognition requires Responses API to be enabled",
       "web-search-not-supported": "Model {{model}} does not support web search, continuing without it"
     }
+  },
+  "dev": {
+    "copy": {
+      "success": "Copied"
+    }
   }
 }

@@ -69,6 +69,11 @@ interface Resources {
       "subtitle": "Discuss problems with your configured models.",
       "title": "SkidHomework Chat"
     },
+    "dev": {
+      "copy": {
+        "success": "Copied"
+      }
+    },
     "import-settings-page": {
       "confirm": {
         "alert": {
